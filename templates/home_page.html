@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block page_content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to Fashion Store</h1>
+
+        <img style="width: 1000px; height: 600px"
+             src="https://u7.uidownload.com/vector/990/530/vector-girls-and-clothing-fashion-shop-logos-vector-04-eps.jpg"
+             alt="">
+        <div class="position-sticky">
+            <p class="lead">Share your pets photos.</p>
+            <hr class="my-4">
+            <div class="flex-row">
+
+                {% if not request.user.is_authenticated %}
+                    <a href="{% url 'login' %}" class="btn btn-lg btn-secondary">Login</a>
+                    <a href="{% url 'register' %}" class="btn btn-lg btn-secondary">Register</a>
+                {% else %}
+                    Hi
+                {% endif %}
+                <!-- Register Button -->
+            </div>
+        </div>
+    </div>
+{% endblock %}
