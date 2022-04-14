@@ -47,3 +47,7 @@ class ProfileDetailsView(views.DetailView):
     model = Profile
     template_name = 'profile_details.html'
     context_object_name = 'profile'
+
+
+class UserLogoutView(auth_views.LogoutView):
+    pass

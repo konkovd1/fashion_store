@@ -1,17 +1,23 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<ul>{% for i in item %}
-    {{ i.product_name }}
-    {{ i.product_picture }}
-    {{ i.price }}
+{% extends 'base.html' %}
+{% block page_content %}
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+    <ul>{% for i in item %}
+        {{ i.product_name }}
+        <img src="{{ i.product_picture.url }}" class="img-thumbnail" alt="..." enctype="multipart/form-data" width="200"
+     height="200">
+        <div>
+        {{ i.price }}lv
+        </div>
     {% endfor %}
-</ul>
-</body>
-</html>
+    </ul>
+    </body>
+    </html>
+{% endblock %}
